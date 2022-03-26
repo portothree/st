@@ -41,6 +41,7 @@ dist: clean
 	rm -rf st-$(VERSION)
 
 install: st
+	patch -p1 < patches/dracula.diff
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f st $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
